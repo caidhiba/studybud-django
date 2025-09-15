@@ -1,0 +1,47 @@
+apps in folder setting.py , manage diffrent sections of our web application like in facebook we an have an app to 
+handle user management an app to handle the posts etc
+and to start a new app in our project we have to open a new pythong terminal that is activated and type the command 
+"python manage.py start app (name of app) and in my case i named it base.
+a folder would be created under the name base and to connect it to the project since now its just a folder in our
+project this base folder containes files like views.pu that is responsible when the user click on urls, any things 
+the page have to render , we have models.py where we will navigate our database.
+to let our project know about the app we just added we go to the main folder studyapp, to our setiing.p and add 
+the file path into that list of paths and add the path "base.apps.baseconfig"
+
+so(urls)triggers views and tats what the user will see
+
+its messy to have all the apps an views in one file in urls.py, thats why when we create an app like 
+i created base, there is a specefic file for views
+
+to let our project know abt the template folder, we go to settings.py in the list of pattrens we write the path
+inside DIRS 'DIRS': [
+            BASE_DIR / 'templates'
+        ], it means go to back to the base directory and find templates folder 
+
+
+to activate the tables and built in sql commands we write this command in the terminal "python manage.py migrate"
+this command built out our database for us
+so now when we use the command python manage.py runserver we no longer get that migrations not applied note
+
+
+to make a new migration we excute the command python manage.py makemigrations and in the folder migrations we notice
+the file 0001 initial , and each time we have to write the command python manage.py migrate ,this 
+command will go to the latest migration and execute it and nowthis table is in the database
+
+to have access to the database we created throught he website, we have to create a user for the login system
+by typing the command python manage.py createsuperuser
+PS C:\Users\admin\Desktop\studybud> python manage.py createsuperuser
+Username (leave blank to use 'admin'): caidhiba
+Email address: caidhiba05@gmail.com    
+Password: 
+Password (again):
+This password is too short. It must contain at least 8 characters.
+This password is too common.
+This password is entirely numeric.
+Bypass password validation and create user anyway? [y/N]: n
+Password: 
+Password (again):
+This password is too short. It must contain at least 8 characters.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+the password is wang520

@@ -1,0 +1,12 @@
+{% extends main.html %}
+
+{%content block %}
+<div>
+    <form action="" method="post">
+        {% csrf_token%} 
+        <!-- this token would be sent after each form submited -->
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock content %}
